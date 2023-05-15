@@ -1,12 +1,14 @@
 <template>
   <div class="input-wrap">
-    <input type="text" name="todo">
+    <input type="text" name="todo" v-model="todo">
     <button>Create</button>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 
+  const todo = ref("")
 </script>
 
 <style lang="scss" scoped>
