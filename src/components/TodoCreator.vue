@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1>Great</h1>
+  <div class="input-wrap">
+    <input type="text" name="todo">
+    <button>Create</button>
   </div>
 </template>
 
