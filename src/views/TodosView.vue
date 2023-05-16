@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import {uid} from 'uid';
 import TodoCreator from '../components/TodoCreator.vue';
 import TodoItem from '../components/TodoItem.vue';
@@ -11,6 +11,10 @@ import {Icon} from '@iconify/vue';
     setTodoListLocalStorage()
   }, {
     deep: true,
+  })
+
+  const todoCompleted = computed(() => {
+    return todoList.value.every((todo) => todo.isCompleted)
   })
 
   const fetchTodoList = () => {
@@ -74,6 +78,10 @@ import {Icon} from '@iconify/vue';
       <Icon icon="noto-v1:sad-but-relieved-face" width="22"/>
       <span>You have no todo's to complete! Add one!</span>
     </p>
+    <p v-if="todoCompleted && todoList.length > 0" class="todos-msg success">
+      <Icon icon="noto-v1:party-popper"/>
+      <span>You have completed all your todos!</span>
+    </p>
   </main>
 </template>
 
@@ -106,5 +114,10 @@ main {
     gap: 8px;
     margin-top: 24px;
   }
+
+  .success {
+    color: #41b080;
+  }
+
 }
 </style>
