@@ -7,7 +7,11 @@ This is a todo list with the following functionalities:
 - [x] User can delete a todo item
 - [x] The todo items are stored in the localstorage
 
-## Project Setup
+## Visit the live demo on:
+
+[Live demo link](https://prospects-vue-todos.netlify.app/)
+
+## Project Setup on your local machine
 
 ```sh
 npm install
